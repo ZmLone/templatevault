@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Catalog — Filter by Notion, Excel, Canva & PDF | TemplateCraft</title>
+  <meta name="description" content="Browse and filter downloadable Notion dashboards, Excel & Google Sheets financial models, Canva social kits, and PDF planners by tool and profession." />
+  <link rel="canonical" href="https://templatecraft.store/catalog.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="catalog" class="bg-slate-50 text-slate-900 antialiased">
+  <div id="site-header"></div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Catalog Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Digital Template Catalog</h1>
+      <p class="text-slate-600 mt-2">Filter by platform or profession to find plug-and-play systems tailored to your workflow.</p>
+    </div>
+
+    <!-- Top Search & Platform Filter Bar -->
+    <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-2xs mb-8 space-y-4">
+      <div class="flex flex-col md:flex-row gap-3">
+        <div class="relative flex-1">
+          <svg class="w-5 h-5 text-slate-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input id="catalog-search" type="search" placeholder="Search templates (e.g., SaaS model, Notion CRM, carousel, budget)..." class="w-full pl-11 pr-4 py-2.5 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <div class="flex items-center gap-2">
+          <label for="catalog-sort" class="text-xs font-semibold text-slate-500 whitespace-nowrap">Sort by:</label>
+          <select id="catalog-sort" class="border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-medium bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="popular">Most Popular</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">Newest Releases</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Platform / Tool Pills -->
+      <div class="flex items-center gap-2 flex-wrap pt-2 border-t border-slate-100">
+        <span class="text-xs font-semibold text-slate-400 mr-1">Platform:</span>
+        <div id="platform-filters" class="flex items-center gap-2 flex-wrap"></div>
+      </div>
+    </div>
+
+    <!-- Sidebar Use-Case Filters + Product Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <aside class="lg:col-span-3 bg-white p-5 rounded-2xl border border-slate-200">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500">Use Case / Profession</h2>
+          <button onclick="resetCatalogFilters()" class="text-xs text-indigo-600 hover:underline cursor-pointer">Reset</button>
+        </div>
+        <div id="usecase-filters" class="space-y-1"></div>
+      </aside>
+
+      <div class="lg:col-span-9">
+        <div class="flex items-center justify-between mb-4">
+          <p id="catalog-result-count" class="text-sm font-medium text-slate-600">Showing all templates</p>
+        </div>
+        <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="data/store-data.js"></script>
+  <script src="components/layout.js"></script>
+  <script src="components/app.js"></script>
+</body>
+</html>
